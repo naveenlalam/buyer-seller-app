@@ -28,13 +28,11 @@ export function setupItemDataListener() {
               itemName:item.val().itemName,
               itemDescription:item.val().itemDescription,
               itemLocDesc:item.val().itemLocDesc,
-              itemPrice:item.val().itemPrice,
-              itemImageUrl:item.val().itemImageUrl,
+              notes:item.val().notes,
               itemAddress:item.val().itemAddress,
               itemSellerAdd:item.val().itemSellerAdd,
               itemLocation:item.val().itemLocation,
               currentDate: Date(item.val().currentDate),
-
             })
           });
     });

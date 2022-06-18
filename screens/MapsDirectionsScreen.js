@@ -10,12 +10,6 @@ import { GOOGLE_MAPS_APIKEY } from "@env";
 
 
 const MapsDirectionsScreen = ({ route, navigation }) => {
-
-
-  const [originLat, setOriginLat] =   useState(route.params.originLat);
-  const [originLng, setOriginLng] =   useState(route.params.originLng);
-  const [destinationLat, setDestLat] =   useState(route.params.destinationLat);
-  const [destinationLng, setDestLng] =   useState(route.params.destinationLng);
   
   console.log("route.params.originLat --->>>",route.params.originLat);
   console.log(",route.params.originLng----->>>>",route.params.originLng);

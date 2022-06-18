@@ -23,14 +23,10 @@ const MapsScreen = ({ route, navigation }) => {
     useState(route.params.item.notes);
     const [address, setAdress] =
     useState(route.params.item.itemAddress);
-
-
-  console.log(lng)
-  console.log(lat)
   
   return (
   <View>
-    <View style={tailWind`h-1/2`}>
+    <View style={tailWind`h-1/3`}>
             <MapView style = {styles.mapStyle}
               initialRegion={{
               latitude: parseFloat(lat),
@@ -50,25 +46,23 @@ const MapsScreen = ({ route, navigation }) => {
 
             </MapView>      
     </View>
-    <View style={tailWind`h-1/2`}>
-       <Text style={styles.textfont}>{name}</Text>
-       <Text style={styles.textfont}>{description}</Text>
-       <Text style={styles.textfont}>{notes}</Text>
-       <Text style={styles.textfont}>{address}</Text>
-
-        <GooglePlacesAutocomplete
-              placeholder='Buyer Location'
+    <View style={tailWind`h-2/3`}>
+    <GooglePlacesAutocomplete
+              placeholder='Enter buyers Location to check the route'
               nearbyPlacesAPI='GooglePlacesSearch'
               debounce={400}
               styles={{
                 container: {
                   backgroundColor: "white",
                   flex:0,
+                  borderColor: "black",
+                  borderWidth:2,
                 },
                 textInput: {
                   backgroundColor:"#f0f0f2",
                   fontSize:20,
-                }
+                },
+                
               }}
 
               onPress={(data,details = null) =>  
@@ -86,6 +80,12 @@ const MapsScreen = ({ route, navigation }) => {
                 language:'en'
               }}
         />      
+       <Text style={styles.textfont}>{name}</Text>
+       <Text style={styles.textfont}>{description}</Text>
+       <Text style={styles.textfont}>{notes}</Text>
+       <Text style={styles.textfont}>{address}</Text>
+
+       
 
     </View>
   </View>

@@ -45,6 +45,7 @@ const AddItemScreen = ({ route, navigation }) => {
           currentDate: new Date().getTime(),
         }
         storeItemData(data);
+        
       }
       
   }
