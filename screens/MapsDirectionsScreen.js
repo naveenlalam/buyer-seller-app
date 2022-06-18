@@ -11,8 +11,6 @@ import { GOOGLE_MAPS_APIKEY } from "@env";
 
 const MapsDirectionsScreen = ({ route, navigation }) => {
   
-  console.log("route.params.originLat --->>>",route.params.originLat);
-  console.log(",route.params.originLng----->>>>",route.params.originLng);
 
   const originCoordinates = [{
     latitude:route.params.originLat,

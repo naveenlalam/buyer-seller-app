@@ -2,6 +2,7 @@ import { getDatabase, push, onValue, ref, set } from "firebase/database";
 
 import { firebaseConfig } from "./fb-credentials";
 import { initializeApp } from "firebase/app"
+import analytics from '@react-native-firebase/analytics';
 
 export function initHW4AppDB() {
     initializeApp(firebaseConfig);

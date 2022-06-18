@@ -50,7 +50,7 @@ const MapsScreen = ({ route, navigation }) => {
     <GooglePlacesAutocomplete
               placeholder='Enter buyers Location to check the route'
               nearbyPlacesAPI='GooglePlacesSearch'
-              debounce={400}
+              debounce={300}
               styles={{
                 container: {
                   backgroundColor: "white",
@@ -80,10 +80,10 @@ const MapsScreen = ({ route, navigation }) => {
                 language:'en'
               }}
         />      
-       <Text style={styles.textfont}>{name}</Text>
-       <Text style={styles.textfont}>{description}</Text>
-       <Text style={styles.textfont}>{notes}</Text>
-       <Text style={styles.textfont}>{address}</Text>
+       <Text style={styles.textfont}>Name: {name}</Text>
+       <Text style={styles.textfont}>Description: {description}</Text>
+       <Text style={styles.textfont}>Seller notes : {notes}</Text>
+       <Text style={styles.textfont}>Address: {address}</Text>
 
        
 
@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
   },
   textfont: {
     fontSize: 20,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
   },
   mapStyle: {
     flex: 3,
