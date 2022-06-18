@@ -2,10 +2,11 @@ import { getDatabase, push, onValue, ref, set } from "firebase/database";
 
 import { firebaseConfig } from "./fb-credentials";
 import { initializeApp } from "firebase/app"
-import analytics from '@react-native-firebase/analytics';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 export function initHW4AppDB() {
     initializeApp(firebaseConfig);
+    
 }
 
 export function storeItemData(item) {
@@ -19,7 +20,7 @@ export function storeItemData(item) {
 export function setupItemDataListener() {
     var listItems = []
     console.log("DataListener called");
-    const db = getDatabase();
+    const db = getDatabase(); 
     const reference = ref(db, "itemData/");
     onValue(reference, (snapshot) => {
         console.log("data listener executes with : ",snapshot);
@@ -29,11 +30,13 @@ export function setupItemDataListener() {
               itemName:item.val().itemName,
               itemDescription:item.val().itemDescription,
               itemLocDesc:item.val().itemLocDesc,
-              notes:item.val().notes,
+              itemPrice:item.val().itemPrice,
+              itemImageUrl:item.val().itemImageUrl,
               itemAddress:item.val().itemAddress,
               itemSellerAdd:item.val().itemSellerAdd,
               itemLocation:item.val().itemLocation,
               currentDate: Date(item.val().currentDate),
+
             })
           });
     });
